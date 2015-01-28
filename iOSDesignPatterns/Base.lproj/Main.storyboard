@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aYZ-3g-3KA">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Speakers-->
+        <scene sceneID="tE0-RE-BTN">
+            <objects>
+                <tableViewController storyboardIdentifier="SpeakersTableViewController" id="8kB-JN-AhP" customClass="SpeakersTableViewController" customModule="iOSDesignPatterns" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="Bo5-Vk-AwT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpeakerTableViewCell" rowHeight="64" id="zfH-q3-35e" customClass="SpeakerTableViewCell" customModule="iOSDesignPatterns" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zfH-q3-35e" id="Hrx-BK-6wx">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGl-6q-2nV">
+                                            <rect key="frame" x="8" y="9" width="584" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="X6S-HD-A5e"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJo-YW-pZ6">
+                                            <rect key="frame" x="8" y="31" width="584" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Euc-zG-tBY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bJo-YW-pZ6" firstAttribute="leading" secondItem="Hrx-BK-6wx" secondAttribute="leadingMargin" id="4Qz-8m-chF"/>
+                                        <constraint firstItem="AGl-6q-2nV" firstAttribute="top" secondItem="Hrx-BK-6wx" secondAttribute="topMargin" constant="1" id="9ah-YT-ba5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bJo-YW-pZ6" secondAttribute="bottom" constant="3" id="RlV-vH-cPu"/>
+                                        <constraint firstItem="AGl-6q-2nV" firstAttribute="trailing" secondItem="Hrx-BK-6wx" secondAttribute="trailingMargin" id="YId-JY-Oak"/>
+                                        <constraint firstItem="bJo-YW-pZ6" firstAttribute="top" secondItem="AGl-6q-2nV" secondAttribute="bottom" constant="1" id="emr-s5-8ou"/>
+                                        <constraint firstItem="bJo-YW-pZ6" firstAttribute="trailing" secondItem="Hrx-BK-6wx" secondAttribute="trailingMargin" id="hlK-bC-LGs"/>
+                                        <constraint firstItem="AGl-6q-2nV" firstAttribute="leading" secondItem="Hrx-BK-6wx" secondAttribute="leadingMargin" id="vc2-ro-GeO"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="gitHubUrlLabel" destination="bJo-YW-pZ6" id="8eh-ju-YZW"/>
+                                    <outlet property="nameLabel" destination="AGl-6q-2nV" id="QGc-ti-LXf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8kB-JN-AhP" id="cFN-rV-4ca"/>
+                            <outlet property="delegate" destination="8kB-JN-AhP" id="PkQ-Ov-mLo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Speakers" id="kzR-sy-6lz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lpp-HO-Iyy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="116"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g1K-NA-0vL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aYZ-3g-3KA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k64-W1-5Bu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8kB-JN-AhP" kind="relationship" relationship="rootViewController" id="Atk-Eh-8Qh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Abz-h9-Dsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="770" y="116"/>
+        </scene>
+    </scenes>
+</document>
